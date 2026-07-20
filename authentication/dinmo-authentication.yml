@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+docs: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+summary:
+  types:
+  - http
+  api_key_in: []
+  oauth2_flows: []
+  http_schemes:
+  - bearer
+schemes:
+- name: PersonalizationApiKey
+  type: http
+  scheme: bearer
+  description: >-
+    A DinMo Personalization API key is sent in the HTTP Authorization header as a
+    Bearer token (Authorization: Bearer <API_KEY>). Keys are generated in the DinMo
+    app and scoped to a workspace's exposed model records. A missing or invalid key
+    returns 401.
+  location: header
+  parameter: Authorization
+  format: Bearer <API_KEY>
+  sources:
+  - https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+notes: >-
+  Platform access (data sources, destinations, segments) is configured through the
+  DinMo web app; the documented programmatic surface is the Personalization API,
+  which uses Bearer [example key] authentication. No OAuth2 or OpenID Connect flow is
+  documented for the public API.
