@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of /.well-known/* across DinMo hosts
+notes: >-
+  No /.well-known discovery documents were served on any DinMo host (all 404). A
+  docs-host llms.txt WAS found and is captured separately at llms/dinmo-llms.txt.
+  This index records the probe results for auditability; no WellKnown/SecurityTxt
+  pointer is wired because nothing was served.
+hosts:
+- host: https://www.dinmo.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://docs.dinmo.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://app.dinmo.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+- host: https://data-export-api.dinmo.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}

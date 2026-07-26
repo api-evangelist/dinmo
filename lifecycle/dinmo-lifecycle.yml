@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+versioning:
+  scheme: uri-path
+  current: v1
+  base_url: https://data-export-api.dinmo.io/v1
+  docs: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+changelog: https://news.dinmo.com/
+deprecated_operations: []
+notes: >-
+  DinMo publishes a product changelog at news.dinmo.com but no dedicated API
+  status page, SLA page, or deprecation policy was located during enrichment.

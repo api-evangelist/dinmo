@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+notes: >-
+  DinMo publishes no official hosted or remote MCP server as of enrichment. This is
+  a DERIVED candidate tool list mapped from the documented Personalization API
+  operation, provided as a starting point for an agent-native surface — not a
+  server DinMo operates.
+server:
+  name: dinmo
+  transport: http
+  url: null
+auth:
+  type: bearer
+  header: Authorization
+  ref: authentication/dinmo-authentication.yml
+tools:
+- name: get_personalization_record
+  description: >-
+    Retrieve an activated model record (customer profile + mapped activation
+    attributes) by its lookup-key value for a given workspace and model.
+  method: GET
+  path: /models/{workspace_id}/{model_id}/records/{record_id}
+  source_operation: getPersonalizationRecord

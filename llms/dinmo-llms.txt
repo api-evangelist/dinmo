@@ -1,0 +1,316 @@
+# DinMo Documentation
+
+## DinMo Documentation
+
+- [Welcome](https://docs.dinmo.io/readme.md): Learn how to configure DinMo, model customer data, build audiences, activate them across business tools, and operate your composable CDP.
+- [Core Concepts](https://docs.dinmo.io/core-concepts.md): Discover the foundational modules of the DinMo platform and understand how they empower you to turn your cloud data into a powerful Customer Data Platform (CDP).
+- [Get started with DinMo](https://docs.dinmo.io/guides/get-started-with-dinmo.md): Learn how to put your data in motion using DinMo
+- [Initial Configuration of DinMo](https://docs.dinmo.io/guides/get-started-with-dinmo/initial-configuration-of-dinmo.md): All necessary technical operations are concentrated in the initial configuration phase, which takes less than one hour. Following this phase, non-technical users can use DinMo autonomously.
+- [Connect a Source](https://docs.dinmo.io/guides/get-started-with-dinmo/initial-configuration-of-dinmo/connect-a-source.md): The first step in your DinMo journey is to connect to a source of data, enabling DinMo to access and manipulate it.
+- [Create your Models](https://docs.dinmo.io/guides/get-started-with-dinmo/initial-configuration-of-dinmo/create-your-models.md): Once DinMo is connected to a source, creating a Data Model teaches DinMo the business context to the tables stored in the data warehouse.
+- [Create a Destination](https://docs.dinmo.io/guides/get-started-with-dinmo/initial-configuration-of-dinmo/create-a-destination.md): Before being able to send data to a destination platform, it should first be connected to DinMo.
+- [Create and Activate Segments on DinMo](https://docs.dinmo.io/guides/get-started-with-dinmo/create-and-activate-segments-on-dinmo.md): Once the initial setup is done, non-technical users can benefit from DinMo's no-code experience to efficiently segment and sync data to destination platforms
+- [Create your first Segment](https://docs.dinmo.io/guides/get-started-with-dinmo/create-and-activate-segments-on-dinmo/create-your-first-segment.md): A segment is a sub part of a model, which can be activated to destination platforms.
+- [Activate your first Segment](https://docs.dinmo.io/guides/get-started-with-dinmo/create-and-activate-segments-on-dinmo/activate-your-first-segment.md): The last step is to activate your segment, meaning, to create a data pipeline to a destination platform
+- [Workspaces & Organizations](https://docs.dinmo.io/guides/workspaces-and-organizations.md): DinMo users are grouped into workspaces and organizations. We explore the meanings of each notion in this page.
+- [Need Help?](https://docs.dinmo.io/guides/need-help.md)
+- [Data Sources](https://docs.dinmo.io/integrations/data-sources.md): A source refers to the data warehouse where all the data you want to get value from is stored. Snowflake, or Google BigQuery are among the most common data warehouses.
+- [AWS Redshift](https://docs.dinmo.io/integrations/data-sources/aws-redshift.md): Connecting DinMo to Amazon Redshift
+- [Databricks](https://docs.dinmo.io/integrations/data-sources/databricks.md): This guide provides detailed instructions for integrating Databricks with DinMo
+- [Google BigQuery](https://docs.dinmo.io/integrations/data-sources/google-bigquery.md): Connecting DinMo to Google BigQuery: Step-by-Step Guide
+- [PostgreSQL](https://docs.dinmo.io/integrations/data-sources/postgresql.md): Connecting DinMo to PostgreSQL: Step-by-Step Guide
+- [Snowflake](https://docs.dinmo.io/integrations/data-sources/snowflake.md): Connect Snowflake to DinMo with a dedicated service user, warehouse, and technical database.
+- [Microsoft Fabric](https://docs.dinmo.io/integrations/data-sources/microsoft-fabric.md): Connecting DinMo to Azure Fabric Warehouse: Step-by-Step Guide
+- [ClickHouse](https://docs.dinmo.io/integrations/data-sources/clickhouse.md): Connecting DinMo to ClickHouse: Step-by-Step Guide
+- [Destination Platforms](https://docs.dinmo.io/integrations/destination-platforms.md): A destination refers to any external tool or service to which you can send source data. This is where the data is usually accessed and utilized by the end users.
+- [Actito](https://docs.dinmo.io/integrations/destination-platforms/actito.md)
+- [Synchronize users attributes](https://docs.dinmo.io/integrations/destination-platforms/actito/synchronize-users-attributes.md)
+- [Synchronize custom tables](https://docs.dinmo.io/integrations/destination-platforms/actito/synchronize-custom-tables.md)
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/actito/export-contact-lists.md)
+- [All My SMS](https://docs.dinmo.io/integrations/destination-platforms/all-my-sms.md): Sending data to All My SMS: Step-by-Step Guide
+- [Attentive](https://docs.dinmo.io/integrations/destination-platforms/attentive.md)
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/attentive/export-contact-lists.md)
+- [Synchronize Users](https://docs.dinmo.io/integrations/destination-platforms/attentive/synchronize-users.md)
+- [Attio](https://docs.dinmo.io/integrations/destination-platforms/attio.md): Step-by-Step guide to push enriched data from your data warehouse into Attio
+- [Synchronize People](https://docs.dinmo.io/integrations/destination-platforms/attio/synchronize-people.md)
+- [Synchronize Users](https://docs.dinmo.io/integrations/destination-platforms/attio/synchronize-users.md)
+- [Synchronize Companies](https://docs.dinmo.io/integrations/destination-platforms/attio/synchronize-companies.md): Learn how to synchronize companies with DinMo
+- [Synchronize Deals](https://docs.dinmo.io/integrations/destination-platforms/attio/synchronize-deals.md): Learn how to synchronize deals with DinMo
+- [AWS S3](https://docs.dinmo.io/integrations/destination-platforms/aws-s3.md): Transfer data at scale from your data warehouse to your apps through AWS using DinMo
+- [Export your data models and segments to AWS S3](https://docs.dinmo.io/integrations/destination-platforms/aws-s3/export-your-data-models-and-segments-to-aws-s3.md): Sync your model profiles and attributes into an AWS S3 bucket to enable personalization and rapid data retrieval in your apps and websites.
+- [Azure Storage](https://docs.dinmo.io/integrations/destination-platforms/azure-storage.md): Transfer data at scale from your data warehouse to your apps through Azure Storage using DinMo
+- [Export data to Azure Blob Storage](https://docs.dinmo.io/integrations/destination-platforms/azure-storage/export-data-to-azure-blob-storage.md): Sync your model profiles and attributes into an Azure Blob Storage container to enable personalization and rapid data retrieval in your apps and websites.
+- [Batch](https://docs.dinmo.io/integrations/destination-platforms/batch.md): Sending data to Batch: Step-by-Step guide
+- [Delete profiles (CEP & MEP)](https://docs.dinmo.io/integrations/destination-platforms/batch/delete-profiles-cep-and-mep.md)
+- [Export contact lists (CEP)](https://docs.dinmo.io/integrations/destination-platforms/batch/export-contact-lists-cep.md)
+- [Send events (CEP)](https://docs.dinmo.io/integrations/destination-platforms/batch/send-events-cep.md)
+- [Synchronize catalog attributes](https://docs.dinmo.io/integrations/destination-platforms/batch/synchronize-catalog-attributes.md)
+- [Synchronize contacts (MEP)](https://docs.dinmo.io/integrations/destination-platforms/batch/synchronize-contacts-mep.md)
+- [Synchronize profiles (CEP)](https://docs.dinmo.io/integrations/destination-platforms/batch/synchronize-profiles-cep.md)
+- [Braze](https://docs.dinmo.io/integrations/destination-platforms/braze.md): Sending data to Braze: Step-by-Step Guide
+- [Export user lists](https://docs.dinmo.io/integrations/destination-platforms/braze/export-user-lists.md)
+- [Send track events](https://docs.dinmo.io/integrations/destination-platforms/braze/send-track-events.md)
+- [Synchronize users attributes](https://docs.dinmo.io/integrations/destination-platforms/braze/synchronize-users-attributes.md)
+- [Synchronize subscription statuses](https://docs.dinmo.io/integrations/destination-platforms/braze/synchronize-subscription-statuses.md)
+- [Brevo](https://docs.dinmo.io/integrations/destination-platforms/brevo.md): Sending data to Brevo: Step-by-Step Guide
+- [Synchronize contacts](https://docs.dinmo.io/integrations/destination-platforms/brevo/synchronize-contacts.md)
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/brevo/export-contact-lists.md)
+- [Crisp](https://docs.dinmo.io/integrations/destination-platforms/crisp.md): Sending data to Crisp: Step-by-Step guide
+- [Synchronize people’s data](https://docs.dinmo.io/integrations/destination-platforms/crisp/synchronize-peoples-data.md)
+- [Criteo](https://docs.dinmo.io/integrations/destination-platforms/criteo.md): Sending data to Criteo: Step-by-Step Guide
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/criteo/export-contact-lists.md)
+- [Dialog Insight](https://docs.dinmo.io/integrations/destination-platforms/dialog-insight.md)
+- [Synchronise Contacts](https://docs.dinmo.io/integrations/destination-platforms/dialog-insight/synchronise-contacts.md)
+- [Dotdigital](https://docs.dinmo.io/integrations/destination-platforms/dotdigital.md): DinMo's Dotdigital integration enables marketing teams to effortlessly achieve their business objectives  using data from their data warehouse.
+- [Synchronize contacts](https://docs.dinmo.io/integrations/destination-platforms/dotdigital/synchronize-contacts.md): Sync your models profiles and attributes into your Dotdigital account to build customer connections with personalized campaigns
+- [Synchronize Insight Data collections](https://docs.dinmo.io/integrations/destination-platforms/dotdigital/synchronize-insight-data-collections.md): Insight data is made up of collections of of structured data related to your customers’ purchasing histories, browsing habits, or product reviews.
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/dotdigital/export-contact-lists.md)
+- [Customer program enrolment](https://docs.dinmo.io/integrations/destination-platforms/dotdigital/customer-program-enrolment.md): Enroll DinMo Profiles programmatically to your Dotdigital programs
+- [Emarsys](https://docs.dinmo.io/integrations/destination-platforms/emarsys.md): Sending data to Emarsys: Step-by-Step Guide
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/emarsys/export-contact-lists.md)
+- [Synchronize contacts data](https://docs.dinmo.io/integrations/destination-platforms/emarsys/synchronize-contacts-data.md)
+- [Synchronize custom table's data (RDS)](https://docs.dinmo.io/integrations/destination-platforms/emarsys/synchronize-custom-tables-data-rds.md)
+- [Fincome](https://docs.dinmo.io/integrations/destination-platforms/fincome.md): Sending data to Fincome: Step-by-Step guide
+- [Synchronize customers' data](https://docs.dinmo.io/integrations/destination-platforms/fincome/synchronize-customers-data.md)
+- [Firestore](https://docs.dinmo.io/integrations/destination-platforms/firestore.md): DinMo's Firestore integration enables marketing teams to effortlessly activate real-time warehouse data, improving personalization and boosting customer engagement.
+- [Create and update Collection Documents](https://docs.dinmo.io/integrations/destination-platforms/firestore/create-and-update-collection-documents.md): Sync your models profiles and attributes into a Firestore collection document to enable real-time personalization and rapid data retrieval in your apps and websites.
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/firestore/export-audiences.md): Sync dynamically DinMo User segments with your website or app users for personalization use cases.
+- [FTP](https://docs.dinmo.io/integrations/destination-platforms/ftp.md): Transfer data at scale from your data warehouse to your apps through FTP using DinMo
+- [Export your data models and segments to FTP](https://docs.dinmo.io/integrations/destination-platforms/ftp/export-your-data-models-and-segments.md): Sync your model profiles and attributes into an FTP server to enable personalization and rapid data retrieval in your apps and websites.
+- [Google Ad Manager](https://docs.dinmo.io/integrations/destination-platforms/google-ad-manager.md): Sending data to Google Ad Manager: Step-by-Step Guide
+- [Export Segments (GAM Key/Values) via Firestore](https://docs.dinmo.io/integrations/destination-platforms/google-ad-manager/export-segments-via-firestore.md)
+- [Export Segments (GAM Audiences) via Batch Upload](https://docs.dinmo.io/integrations/destination-platforms/google-ad-manager/export-segments-via-batch-upload.md)
+- [Google Ads](https://docs.dinmo.io/integrations/destination-platforms/google-ads.md): Sending data to Google Ads: Step-by-Step Guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/google-ads/export-audiences.md)
+- [Enhanced Conversions for Web](https://docs.dinmo.io/integrations/destination-platforms/google-ads/enhanced-conversions-for-web.md): This destination is used to improve your web conversions measurement by sending hashed first-party data up until 24 hours after the conversion.
+- [Upload click or offline conversions](https://docs.dinmo.io/integrations/destination-platforms/google-ads/upload-click-or-offline-conversions.md): This destination allows you to upload offline or custom conversions using Google Click Id (Gclid) or hashed first-party data.
+- [Prerequisites and walkthrough](https://docs.dinmo.io/integrations/destination-platforms/google-ads/upload-click-or-offline-conversions/prerequisites-and-walkthrough.md)
+- [Adjust conversion events](https://docs.dinmo.io/integrations/destination-platforms/google-ads/adjust-conversion-events.md)
+- [Retract conversion events](https://docs.dinmo.io/integrations/destination-platforms/google-ads/retract-conversion-events.md)
+- [Sync offline store conversions](https://docs.dinmo.io/integrations/destination-platforms/google-ads/sync-offline-store-conversions.md): Store sales conversions focus specifically on importing in-store or offline purchase data, often aggregated and matched using customer information rather than individual click IDs.
+- [Google Cloud Storage](https://docs.dinmo.io/integrations/destination-platforms/google-cloud-storage.md): Transfer data at scale from your data warehouse to your apps through Google Cloud Storage using DinMo
+- [Export your data models and segments to Google Cloud Storage](https://docs.dinmo.io/integrations/destination-platforms/google-cloud-storage/export-your-data-models-and-segments-to-google-cloud-storage.md): Sync your model profiles and attributes into a Google Cloud Storage bucket to enable personalization and rapid data retrieval in your apps and websites.
+- [Google Display & Video 360](https://docs.dinmo.io/integrations/destination-platforms/google-display-and-video-360.md): Sending data to Google Display & Video 360: Step-by-Step Guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/google-display-and-video-360/export-audiences.md)
+- [Google Drive](https://docs.dinmo.io/integrations/destination-platforms/google-drive.md)
+- [Export data to Google Sheet](https://docs.dinmo.io/integrations/destination-platforms/google-drive/export-data-to-google-sheet.md): Sync your model profiles and attributes into a Google Sheet to enable personalization and rapid data retrieval in your apps and websites.
+- [Google Search Ads 360](https://docs.dinmo.io/integrations/destination-platforms/google-search-ads-360.md): Sending data to Google Search Ads 360: Step-by-Step Guide
+- [Hubspot](https://docs.dinmo.io/integrations/destination-platforms/hubspot.md): Sending data to Hubspot: Step-by-Step guide
+- [Synchronize objects](https://docs.dinmo.io/integrations/destination-platforms/hubspot/synchronize-objects.md)
+- [Synchronize custom CRM objects](https://docs.dinmo.io/integrations/destination-platforms/hubspot/synchronize-custom-crm-objects.md)
+- [Intercom](https://docs.dinmo.io/integrations/destination-platforms/intercom.md): Sending data to Intercom: Step-by-Step Guide
+- [Export segments](https://docs.dinmo.io/integrations/destination-platforms/intercom/export-segments.md)
+- [Synchronize contacts](https://docs.dinmo.io/integrations/destination-platforms/intercom/synchronize-contacts.md)
+- [Synchronize companies](https://docs.dinmo.io/integrations/destination-platforms/intercom/synchronize-companies.md)
+- [Iterable](https://docs.dinmo.io/integrations/destination-platforms/iterable.md)
+- [Synchronize user attributes](https://docs.dinmo.io/integrations/destination-platforms/iterable/synchronize-user-attributes.md)
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/iterable/export-contact-lists.md)
+- [Send events](https://docs.dinmo.io/integrations/destination-platforms/iterable/send-events.md): Send behavioral events from DinMo to Iterable.
+- [June Email Marketing](https://docs.dinmo.io/integrations/destination-platforms/june-email-marketing.md): Follow these steps to successfully connect your June platform to DinMo
+- [Export Contact Lists](https://docs.dinmo.io/integrations/destination-platforms/june-email-marketing/export-contact-lists.md): Learn how to create an activation with you June Platform to sync Lists with your DinMo user segments and models
+- [Synchronize Customer Attributes](https://docs.dinmo.io/integrations/destination-platforms/june-email-marketing/synchronize-customer-attributes.md)
+- [Klaviyo](https://docs.dinmo.io/integrations/destination-platforms/klaviyo.md): Sending data to Klaviyo: Step-by-Step Guide
+- [Create subscription list](https://docs.dinmo.io/integrations/destination-platforms/klaviyo/create-subscription-list.md): Use this destination to subscribe or unsubscribe profiles to email marketing, SMS marketing, or both.
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/klaviyo/export-contact-lists.md)
+- [Send profile events](https://docs.dinmo.io/integrations/destination-platforms/klaviyo/send-profile-events.md)
+- [Synchronise contacts](https://docs.dinmo.io/integrations/destination-platforms/klaviyo/synchronise-contacts.md)
+- [LinkedIn Ads](https://docs.dinmo.io/integrations/destination-platforms/linkedin-ads.md): Sending data to LinkedIn Ads: Step-by-Step Guide
+- [Export user audiences](https://docs.dinmo.io/integrations/destination-platforms/linkedin-ads/export-user-audiences.md)
+- [Export company audiences](https://docs.dinmo.io/integrations/destination-platforms/linkedin-ads/export-company-audiences.md)
+- [Mailchimp](https://docs.dinmo.io/integrations/destination-platforms/mailchimp.md): Sending data to Mailchimp: Step-by-Step Guide
+- [Export segments](https://docs.dinmo.io/integrations/destination-platforms/mailchimp/export-segments.md)
+- [Meta Ads](https://docs.dinmo.io/integrations/destination-platforms/meta-ads.md): Sending data to Meta Ads: Step-by-Step Guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/meta-ads/export-audiences.md)
+- [Send conversion events](https://docs.dinmo.io/integrations/destination-platforms/meta-ads/send-conversion-events.md)
+- [Microsoft Ads (Bing)](https://docs.dinmo.io/integrations/destination-platforms/microsoft-ads-bing.md): Sending data to Microsoft Ads: Step-by-Step guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/microsoft-ads-bing/export-audiences.md)
+- [Microsoft Dynamics 365](https://docs.dinmo.io/integrations/destination-platforms/microsoft-dynamics-365.md)
+- [Synchronise data objects](https://docs.dinmo.io/integrations/destination-platforms/microsoft-dynamics-365/synchronise-data-objects.md)
+- [MySQL](https://docs.dinmo.io/integrations/destination-platforms/mysql.md): DinMo's MySQL destination lets teams sync warehouse profiles and attributes to an existing MySQL table for operational access, internal tools, and downstream applications.
+- [Synchronize contact attributes](https://docs.dinmo.io/integrations/destination-platforms/mysql/synchronize-contact-attributes.md): Sync customer and profile attributes from DinMo into an existing MySQL table using upsert or mirror behavior.
+- [Piano Analytics](https://docs.dinmo.io/integrations/destination-platforms/piano-analytics.md)
+- [Synchronize Catalogs](https://docs.dinmo.io/integrations/destination-platforms/piano-analytics/synchronize-catalogs.md)
+- [Pinterest Ads](https://docs.dinmo.io/integrations/destination-platforms/pinterest-ads.md): Sending data to Pinterest Ads: Step-by-Step Guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/pinterest-ads/export-audiences.md)
+- [Send conversions](https://docs.dinmo.io/integrations/destination-platforms/pinterest-ads/send-conversions.md)
+- [Purchasely](https://docs.dinmo.io/integrations/destination-platforms/purchasely.md)
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/purchasely/export-audiences.md)
+- [Reddit Ads](https://docs.dinmo.io/integrations/destination-platforms/reddit-ads.md)
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/reddit-ads/export-audiences.md)
+- [Redis](https://docs.dinmo.io/integrations/destination-platforms/redis.md): DinMo's Redis integration enables teams to activate warehouse data into low-latency operational systems for personalization, APIs, and application experiences.
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/redis/export-audiences.md): Sync DinMo audience membership into Redis so applications and personalization services can read segment membership with low latency.
+- [Salesforce](https://docs.dinmo.io/integrations/destination-platforms/salesforce.md): Sending data to Salesforce Service or Sales Cloud (CRM): Step-by-step guide
+- [Synchronize object attributes](https://docs.dinmo.io/integrations/destination-platforms/salesforce/synchronize-object-attributes.md)
+- [Synchronize custom object attributes](https://docs.dinmo.io/integrations/destination-platforms/salesforce/synchronize-custom-object-attributes.md)
+- [Salesforce Marketing Cloud](https://docs.dinmo.io/integrations/destination-platforms/salesforce-marketing-cloud.md): Sending data to Salesforce Marketing Cloud: Step-by-Step Guide
+- [Synchronize data extensions](https://docs.dinmo.io/integrations/destination-platforms/salesforce-marketing-cloud/synchronize-data-extensions.md)
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/salesforce-marketing-cloud/export-audiences.md)
+- [Selligent](https://docs.dinmo.io/integrations/destination-platforms/selligent.md): Sending data to Selligent: Step-by-Step Guide
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/selligent/export-contact-lists.md)
+- [Synchronize record attributes](https://docs.dinmo.io/integrations/destination-platforms/selligent/synchronize-record-attributes.md)
+- [SendGrid](https://docs.dinmo.io/integrations/destination-platforms/sendgrid.md): Sending data to SendGrid: Step-by-Step Guide
+- [Synchronize contacts](https://docs.dinmo.io/integrations/destination-platforms/sendgrid/synchronize-contacts.md)
+- [Export contact lists](https://docs.dinmo.io/integrations/destination-platforms/sendgrid/export-contact-lists.md)
+- [SFTP](https://docs.dinmo.io/integrations/destination-platforms/sftp.md): Transfer data at scale from your data warehouse to your apps through SFTP using DinMo
+- [Export your data models and segments](https://docs.dinmo.io/integrations/destination-platforms/sftp/export-your-data-models-and-segments.md): Sync your model profiles and attributes into a SFTP server to enable personalization and rapid data retrieval in your apps and websites.
+- [Snapchat Ads](https://docs.dinmo.io/integrations/destination-platforms/snapchat-ads.md): Sending data to Snapchat Ads: Step-by-Step Guide
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/snapchat-ads/export-audiences.md)
+- [Send Offline Conversions](https://docs.dinmo.io/integrations/destination-platforms/snapchat-ads/send-offline-conversions.md): Learn how to use Offline Conversions Events to Snapchat CAPI
+- [Splio](https://docs.dinmo.io/integrations/destination-platforms/splio.md): Sending data to Splio: Step-by-Step guide
+- [Synchronize contacts](https://docs.dinmo.io/integrations/destination-platforms/splio/synchronize-contacts.md)
+- [Taboola](https://docs.dinmo.io/integrations/destination-platforms/taboola.md): Send DinMo audiences to Taboola First Party Audiences for activation across Taboola campaigns.
+- [Export First Party Audiences](https://docs.dinmo.io/integrations/destination-platforms/taboola/export-first-party-audiences.md): Create and update Taboola First Party Audiences from DinMo segments using email addresses or mobile advertising IDs.
+- [Talon.One](https://docs.dinmo.io/integrations/destination-platforms/talon.one.md): Sending data to Talon.One: Step-by-step guide
+- [Synchronize Audiences](https://docs.dinmo.io/integrations/destination-platforms/talon.one/synchronize-audiences.md)
+- [Synchronize Customer Profile Attributes](https://docs.dinmo.io/integrations/destination-platforms/talon.one/synchronize-customer-profile-attributes.md)
+- [Trustpilot](https://docs.dinmo.io/integrations/destination-platforms/trustpilot.md)
+- [Create review invitations](https://docs.dinmo.io/integrations/destination-platforms/trustpilot/create-review-invitations.md)
+- [TikTok Ads](https://docs.dinmo.io/integrations/destination-platforms/tiktok-ads.md): Sending data to TikTok Ads: Step-by-Step Guide
+- [Export Audiences](https://docs.dinmo.io/integrations/destination-platforms/tiktok-ads/export-audiences.md)
+- [Send Offline Conversions](https://docs.dinmo.io/integrations/destination-platforms/tiktok-ads/send-offline-conversions.md)
+- [Send Web Conversions](https://docs.dinmo.io/integrations/destination-platforms/tiktok-ads/send-web-conversions.md)
+- [The Trade Desk](https://docs.dinmo.io/integrations/destination-platforms/the-trade-desk.md)
+- [Export CRM segments](https://docs.dinmo.io/integrations/destination-platforms/the-trade-desk/export-crm-segments.md)
+- [Export First-Party segments](https://docs.dinmo.io/integrations/destination-platforms/the-trade-desk/export-first-party-segments.md)
+- [Voyado Engage](https://docs.dinmo.io/integrations/destination-platforms/voyado-engage.md): Deliver personalised experiences at scale leveraging Voyado Multichannel Engagement Platform and DinMo Unified Data Foundations
+- [Synchronize users attributes](https://docs.dinmo.io/integrations/destination-platforms/voyado-engage/synchronize-users-attributes.md): Sync your models profiles and attributes into your Dotdigital account to build customer connections with personalized campaigns
+- [Synchronize User Segments](https://docs.dinmo.io/integrations/destination-platforms/voyado-engage/sync-audiences-as-labels.md)
+- [Fire custom triggers (Coming soon)](https://docs.dinmo.io/integrations/destination-platforms/voyado-engage/fire-custom-triggers-coming-soon.md): Trigger Voyado custom triggers for existing contacts, with contextual payload data built in DinMo
+- [Send interactions (Coming Soon)](https://docs.dinmo.io/integrations/destination-platforms/voyado-engage/send-interactions-coming-soon.md): Send custom interaction events to Voyado and attach them to existing contacts
+- [Webhook](https://docs.dinmo.io/integrations/destination-platforms/webhook.md)
+- [X (Twitter)](https://docs.dinmo.io/integrations/destination-platforms/x-twitter.md): Sending data to X: Step-by-Step Guide
+- [Export audiences](https://docs.dinmo.io/integrations/destination-platforms/x-twitter/export-audiences.md)
+- [Zendesk](https://docs.dinmo.io/integrations/destination-platforms/zendesk.md): Sending data to Zendesk: Step-by-Step Guide
+- [Synchronize users](https://docs.dinmo.io/integrations/destination-platforms/zendesk/synchronize-users.md)
+- [Synchronize custom objects' data](https://docs.dinmo.io/integrations/destination-platforms/zendesk/synchronize-custom-objects-data.md)
+- [Zuora](https://docs.dinmo.io/integrations/destination-platforms/zuora.md): Sync business data from your data warehouse to your Zuora: Step-by-step guide
+- [Synchronize Accounts](https://docs.dinmo.io/integrations/destination-platforms/zuora/synchronize-accounts.md)
+- [Synchronize Subscriptions](https://docs.dinmo.io/integrations/destination-platforms/zuora/synchronize-subscriptions.md)
+- [Send Usage Data](https://docs.dinmo.io/integrations/destination-platforms/zuora/send-usage-data.md)
+- [Microsoft Dynamics 365](https://docs.dinmo.io/integrations/destination-platforms/microsoft-dynamics-365-1.md): Sync customer profiles and attributes from your data warehouse into Microsoft Dynamics 365 via Dataverse Web API
+- [Synchronise object attributes](https://docs.dinmo.io/integrations/destination-platforms/microsoft-dynamics-365-1/synchronise-object-attributes.md)
+- [DinMo Ingest](https://docs.dinmo.io/integrations/dinmo-ingest.md): DinMo's Ingestion module refers to any external tool or service to which DinMo can ingest the data from into your cloud data warehouse, to enrich your customer datasets.
+- [Google Ads](https://docs.dinmo.io/integrations/dinmo-ingest/google-ads.md): Setup Meta Ads with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/google-ads/setup-guide.md)
+- [Meta Ads](https://docs.dinmo.io/integrations/dinmo-ingest/meta-ads.md): Setup Meta Ads with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/meta-ads/setup-guide.md)
+- [Shopify](https://docs.dinmo.io/integrations/dinmo-ingest/shopify.md): Setup Shopify with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/shopify/setup-guide.md)
+- [Tiktok Ads](https://docs.dinmo.io/integrations/dinmo-ingest/tiktok-ads.md): Setup Tiktok Ads with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/tiktok-ads/setup-guide.md)
+- [Yahoo DSP](https://docs.dinmo.io/integrations/dinmo-ingest/yahoo-dsp.md)
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/yahoo-dsp/setup-guide.md)
+- [Yotpo](https://docs.dinmo.io/integrations/dinmo-ingest/yotpo.md): Setup Yotpo with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/yotpo/setup-guide.md)
+- [Zendesk Support](https://docs.dinmo.io/integrations/dinmo-ingest/zendesk-support.md): Setup Zendesk Support with DinMo's ingestion capabilities.
+- [Setup Guide](https://docs.dinmo.io/integrations/dinmo-ingest/zendesk-support/setup-guide.md)
+- [Microsoft Dynamics 365](https://docs.dinmo.io/integrations/dinmo-ingest/microsoft-dynamics-365.md)
+- [Overview](https://docs.dinmo.io/models/overview.md)
+- [Model materialization](https://docs.dinmo.io/models/overview/model-materialization.md)
+- [Graph view](https://docs.dinmo.io/models/overview/graph-view.md): Explore the relationships and dependencies between models in your DinMo workspace.
+- [Primary Keys](https://docs.dinmo.io/models/primary-keys.md)
+- [Detect duplicate primary keys](https://docs.dinmo.io/models/primary-keys/detect-duplicate-primary-keys.md)
+- [Computed Fields](https://docs.dinmo.io/models/computed-fields.md): Enrich DinMo models with calculated, classified, aggregated, or related attributes.
+- [Aggregated Fields](https://docs.dinmo.io/models/computed-fields/aggregated-fields.md): Calculate a value from multiple records in a related model.
+- [Formula Fields](https://docs.dinmo.io/models/computed-fields/formula-fields.md): Create a value by applying an operation to fields in the same model.
+- [Label Fields](https://docs.dinmo.io/models/computed-fields/label-fields.md): Classify records into business-friendly categories using conditions.
+- [Related Fields](https://docs.dinmo.io/models/computed-fields/related-fields.md): Map a field from a related model in an activation without adding it to the parent model.
+- [Overview](https://docs.dinmo.io/identity-resolution/overview.md)
+- [Choose your project type](https://docs.dinmo.io/identity-resolution/choose-your-approach.md)
+- [Concepts](https://docs.dinmo.io/identity-resolution/concepts.md)
+- [Profile Resolution](https://docs.dinmo.io/identity-resolution/profile-resolution.md)
+- [Create your first Profile Resolution project](https://docs.dinmo.io/identity-resolution/profile-resolution/get-started.md)
+- [Matching rules](https://docs.dinmo.io/identity-resolution/profile-resolution/matching-rules.md)
+- [Review and monitor](https://docs.dinmo.io/identity-resolution/profile-resolution/review-and-monitor.md)
+- [Output tables](https://docs.dinmo.io/identity-resolution/profile-resolution/output-tables.md)
+- [Event Stitching](https://docs.dinmo.io/identity-resolution/event-stitching.md)
+- [Prepare event data](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-prepare-data.md)
+- [Create an Event Stitching project](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-create-project.md)
+- [How Event Stitching works](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-how-it-works.md)
+- [Identifier policy and guardrails](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-identifier-policy.md)
+- [Review and monitor](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-review-and-monitor.md)
+- [Investigate results](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-investigate-results.md)
+- [Event profile graph](https://docs.dinmo.io/identity-resolution/event-stitching/event-profile-graph.md)
+- [Output tables](https://docs.dinmo.io/identity-resolution/event-stitching/event-stitching-output-tables.md)
+- [How customer deduplication works](https://docs.dinmo.io/identity-resolution/customer-deduplication.md)
+- [Fuzzy matching](https://docs.dinmo.io/identity-resolution/fuzzy-matching.md)
+- [Golden record](https://docs.dinmo.io/identity-resolution/golden-record.md)
+- [Survivorship rules](https://docs.dinmo.io/identity-resolution/survivorship-rules.md)
+- [dinmo\_id](https://docs.dinmo.io/identity-resolution/dinmo-id.md)
+- [Identity graph](https://docs.dinmo.io/identity-resolution/identity-graph.md)
+- [How Identity Resolution works](https://docs.dinmo.io/identity-resolution/how-it-works.md)
+- [Moved: Matching rules](https://docs.dinmo.io/identity-resolution/identifier-rules.md)
+- [Visual Builder](https://docs.dinmo.io/segments/visual-builder.md): The visual builder is a no-code tool that is designed to help non-technical users create user segments easily
+- [Segment Templates](https://docs.dinmo.io/segments/templates.md): Save and reuse segment definitions with segment templates.
+- [Breakdowns](https://docs.dinmo.io/segments/breakdowns.md)
+- [Overlap Analysis](https://docs.dinmo.io/segments/overlap-analysis.md)
+- [Remote segments](https://docs.dinmo.io/segments/remote-segments.md)
+- [Overview](https://docs.dinmo.io/activations/overview.md)
+- [Sync Scheduling](https://docs.dinmo.io/activations/sync-scheduling.md)
+- [Technical sync tables](https://docs.dinmo.io/activations/technical-sync-tables.md)
+- [Troubleshooting Syncs](https://docs.dinmo.io/activations/troubleshooting-syncs.md)
+- [Automatic pause or resume Activations](https://docs.dinmo.io/activations/troubleshooting-syncs/automatic-pause-or-resume-activations.md)
+- [Sync warnings](https://docs.dinmo.io/activations/troubleshooting-syncs/sync-warnings.md)
+- [Overview](https://docs.dinmo.io/ai-predictions/overview.md)
+- [LTV and Churn](https://docs.dinmo.io/ai-predictions/ltv-and-churn.md)
+- [Product Recommendations](https://docs.dinmo.io/ai-predictions/product-recommendations.md)
+- [Overview](https://docs.dinmo.io/customer-hub/overview.md): Marketer-first interface to discover, segment, and activate warehouse audiences—no SQL, just instant insight to action.
+- [Getting Started](https://docs.dinmo.io/customer-hub/getting-started.md): All necessary technical operations are concentrated in the initial configuration phase, which takes less than one hour. Following this phase, non-technical users can use DinMo autonomously.
+- [Schema configuration](https://docs.dinmo.io/customer-hub/getting-started/schema-configuration.md): Once the Customer Hub is live, configuring the Schema teaches DinMo the business context to the tables stored in the data warehouse.
+- [Metrics configuration](https://docs.dinmo.io/customer-hub/getting-started/metrics-configuration.md)
+- [Audience Creation](https://docs.dinmo.io/customer-hub/getting-started/audience-creation.md)
+- [Audience Performance](https://docs.dinmo.io/customer-hub/getting-started/audience-performance.md)
+- [GDPR Customer Rights](https://docs.dinmo.io/customer-hub/gdpr-customer-rights.md)
+- [Personalization API](https://docs.dinmo.io/customer-hub/profiles-api.md): Retrieve up-to-date personalization data from DinMo using a business identifier.
+- [Set up the Personalization API](https://docs.dinmo.io/customer-hub/profiles-api/set-up.md): Create a Personalization API activation and retrieve its endpoint.
+- [Personalization API reference](https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md): Endpoint, authentication, and responses for the DinMo Personalization API.
+- [Overview](https://docs.dinmo.io/journey/journey.md)
+- [Getting Started](https://docs.dinmo.io/journey/getting-started.md)
+- [Create your first Journey](https://docs.dinmo.io/journey/getting-started/create-your-first-journey.md)
+- [Publish, pause, and resume a Journey](https://docs.dinmo.io/journey/getting-started/publish-pause-and-resume-a-journey.md)
+- [Concepts](https://docs.dinmo.io/journey/concepts.md)
+- [Entry rules](https://docs.dinmo.io/journey/concepts/entry-rules.md)
+- [Exit rules](https://docs.dinmo.io/journey/concepts/exit-rules.md)
+- [Wait](https://docs.dinmo.io/journey/concepts/wait.md)
+- [Segment](https://docs.dinmo.io/journey/concepts/segment.md)
+- [Pause Until](https://docs.dinmo.io/journey/concepts/pause-until.md)
+- [Activate](https://docs.dinmo.io/journey/concepts/activate.md)
+- [Stop](https://docs.dinmo.io/journey/concepts/stop.md)
+- [Monitoring and Troubleshooting](https://docs.dinmo.io/journey/monitoring-and-troubleshooting.md)
+- [Run history](https://docs.dinmo.io/journey/monitoring-and-troubleshooting/run-history.md)
+- [Common validation issues](https://docs.dinmo.io/journey/monitoring-and-troubleshooting/common-validation-issues.md)
+- [Best Practices](https://docs.dinmo.io/journey/best-practices.md)
+- [Designing safe journeys](https://docs.dinmo.io/journey/best-practices/designing-safe-journeys.md)
+- [Choosing Wait vs Pause Until](https://docs.dinmo.io/journey/best-practices/choosing-wait-vs-pause-until.md)
+- [Reference](https://docs.dinmo.io/journey/reference.md)
+- [Glossary](https://docs.dinmo.io/journey/reference/glossary.md)
+- [DinMo Storage](https://docs.dinmo.io/data-hosting/dinmo-storage.md): Discover how DinMo Storage enables companies to effortlessly leverage a fully managed and secure cloud data warehouse, without having to operate their own infrastructure.
+- [Set Up](https://docs.dinmo.io/workspace-management/set-up.md)
+- [Manage tags](https://docs.dinmo.io/workspace-management/tags.md): Review, edit, and delete the tags available in your DinMo workspace.
+- [Personal settings](https://docs.dinmo.io/workspace-management/personal-settings.md): Update your personal profile and preferred language in DinMo.
+- [Managing Users, Roles & Permissions](https://docs.dinmo.io/workspace-management/managing-users-roles-and-permissions.md)
+- [Audit Logs](https://docs.dinmo.io/workspace-management/audit-logs.md)
+- [Enterprise Single Sign-On (SSO)](https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso.md)
+- [SSO using Google Workspace](https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso/sso-using-google-workspace.md)
+- [SSO using Okta](https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso/sso-using-okta.md)
+- [SSO using Microsoft Entra ID](https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso/sso-using-microsoft-entra.md)
+- [Overview](https://docs.dinmo.io/security-and-privacy/overview.md)
+- [Networking](https://docs.dinmo.io/security-and-privacy/networking.md)
+- [Privacy](https://docs.dinmo.io/security-and-privacy/privacy.md): Last updated Feb, 9th 2025
+- [Data Processing](https://docs.dinmo.io/security-and-privacy/privacy/data-processing.md): Last Updated April, 12th 2025 - Register of Categories of Processing Activities (Article 30.2 GDPR)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.dinmo.io/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

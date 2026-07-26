@@ -1,0 +1,41 @@
+generated: '2026-07-18'
+method: searched
+source: https://news.dinmo.com/
+url: https://news.dinmo.com/
+scheme: product-changelog
+notes: >-
+  DinMo publishes a product changelog / "what's new" feed at news.dinmo.com. Entries
+  are titled and categorized but are not surfaced with machine-readable dates on the
+  index; the recent window below is captured in reverse-chronological order without
+  per-entry dates. This is a product changelog, not a versioned API changelog.
+entries:
+- title: Stay ahead of unexpected audience changes
+  category: improvement
+  highlight: High-turnover warning alerts when a segment's audience share changes unusually.
+- title: Build segments faster
+  category: improvement
+  highlight: Duplicate a segment directly from the Segments page.
+- title: 'Klaviyo events: custom attributes'
+  category: improvement
+  highlight: Custom attributes can be included in Klaviyo event payloads.
+- title: A refreshed Segment Builder
+  category: improvement
+  highlight: Redesigned builder with clearer group boundaries and OR/AND readability.
+- title: Preview related data before you build
+  category: improvement
+  highlight: Related-model previews available before applying segmentation rules.
+- title: Bring order to your data models with tags
+  category: new-feature
+  highlight: Tagging system to organize data models by business domain or team.
+- title: Enrich models faster with Related Fields
+  category: new-feature
+  highlight: New computed field type to bring data between models without aggregation.
+- title: Protect every audience with Master Exclusions
+  category: new-feature
+  highlight: Master Exclusion Lists apply global suppression rules across segments.
+- title: Turn winning audiences into reusable templates
+  category: new-feature
+  highlight: Segment templates standardize high-value audience logic.
+- title: Activate audiences in Taboola
+  category: new-integration
+  highlight: Taboola added as an activation destination.

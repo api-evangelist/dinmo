@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+api: DinMo Personalization API
+base_url: https://data-export-api.dinmo.io/v1
+conventions:
+  authentication:
+    style: bearer-api-key
+    header: Authorization
+    format: Bearer <API_KEY>
+    ref: authentication/dinmo-authentication.yml
+  versioning:
+    style: uri-path
+    current: v1
+    example: https://data-export-api.dinmo.io/v1
+    ref: lifecycle/dinmo-lifecycle.yml
+  resource_addressing:
+    pattern: /models/{workspace_id}/{model_id}/records/{record_id}
+    notes: >-
+      Records are addressed by workspace, model, and the configured lookup-key
+      value. workspace_id and model_id come from the model's exposure configuration.
+  idempotency:
+    supported: false
+    notes: >-
+      The documented surface is a single GET (read) operation, which is inherently
+      idempotent; no write endpoints or Idempotency-Key header are documented.
+  pagination:
+    supported: false
+    notes: The record-retrieval endpoint returns a single record by key; no list pagination is documented.
+  error_handling:
+    style: http-status
+    problem_json: false
+    codes: [200, 401, 404, 429, 500]
+    ref: errors/dinmo-problem-types.yml
+  rate_limiting:
+    signaled: true
+    mechanism: HTTP 429 (Too Many Requests) on limit exceeded; retry with backoff
+    documented_limits: false
+  response_shape:
+    notes: >-
+      A successful response contains the lookup key and the model's mapped
+      activation attributes; the attribute schema varies by exposure configuration.

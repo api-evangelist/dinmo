@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+format: http-status
+envelope: >-
+  The Personalization API signals errors via HTTP status codes. No RFC 9457
+  application/problem+json media type is documented; the reference documents the
+  status codes and the client action to take for each.
+problems:
+- status: 200
+  title: OK
+  meaning: Record found.
+  action: Use the returned record (lookup key + mapped activation attributes).
+  source_operation: getPersonalizationRecord
+- status: 401
+  title: Unauthorized
+  meaning: The API key is missing or invalid.
+  action: Verify the Authorization header carries a valid Bearer Personalization API key.
+  source_operation: getPersonalizationRecord
+- status: 404
+  title: Not Found
+  meaning: No record matches the provided lookup key for the workspace/model.
+  action: Implement a fallback for missing records.
+  source_operation: getPersonalizationRecord
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit exceeded.
+  action: Retry with backoff.
+  source_operation: getPersonalizationRecord
+- status: 500
+  title: Server Error
+  meaning: A service-side error occurred (5xx).
+  action: Retry with exponential backoff.
+  source_operation: getPersonalizationRecord
