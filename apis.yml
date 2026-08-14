@@ -19,20 +19,28 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 accessModel:
-  pricing: unknown
-  onboarding: self-serve
-  trial: false
+  pricing: paid
+  pricing_from: 350 EUR / month (Starter); a 250 EUR / month startup plan is available on qualification
+  onboarding: sales-assisted
+  trial: true
+  trial_terms: 30-day free trial advertised on the pricing page
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Paid plans from 350 EUR/month, annual commitment, 30-day trial
+  confidence: high
   source:
-  - authentication
-  generated: '2026-07-22'
-  method: derived
+  - https://www.dinmo.com/pricing
+  - plans/dinmo-plans-pricing.yml
+  - https://docs.dinmo.io/customer-hub/profiles-api.md
+  note: >-
+    Plans are published with prices, but the Personalization API must be enabled for
+    a workspace by DinMo before it can be used, so programmatic access is
+    sales-gated rather than self-serve.
+  generated: '2026-08-13'
+  method: searched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-13'
 image: https://www.dinmo.com/favicon.ico
 tags:
 - Company
@@ -74,6 +82,14 @@ apis:
     url: conventions/dinmo-conventions.yml
   - type: MCPServer
     url: mcp/dinmo-mcp.yml
+  - type: RateLimits
+    url: rate-limits/dinmo-rate-limits.yml
+  - type: DataModel
+    url: data-model/dinmo-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/dinmo-lifecycle.yml
+  - type: GettingStarted
+    url: https://docs.dinmo.io/customer-hub/profiles-api/set-up
 common:
 - type: Website
   url: https://www.dinmo.com
@@ -116,8 +132,32 @@ common:
   url: security/dinmo-domain-security.yml
 - type: MCPServer
   url: mcp/dinmo-mcp.yml
+- type: Plans
+  url: plans/dinmo-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/dinmo-rate-limits.yml
+- type: Conformance
+  url: conformance/dinmo-conformance.yml
+- type: Compliance
+  url: conformance/dinmo-conformance.yml
+  name: SOC 2 Type 2, GDPR, CCPA (published in DinMo security and privacy docs)
+- type: DataModel
+  url: data-model/dinmo-data-model.yml
+- type: Webhooks
+  url: asyncapi/dinmo-webhooks.yml
+  name: Webhook destination connector (DinMo is the sender; no AsyncAPI published)
+- type: Integrations
+  url: https://www.dinmo.com/integrations/
+- type: Tutorials
+  url: https://www.dinmo.com/tutorials/
+- type: CaseStudies
+  url: https://www.dinmo.com/customer-stories/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/dinmo-io/
+- type: YouTube
+  url: https://www.youtube.com/@DinMoTube
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 6
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
