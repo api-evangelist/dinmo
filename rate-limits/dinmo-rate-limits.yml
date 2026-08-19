@@ -1,0 +1,44 @@
+generated: '2026-08-13'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api.md
+docs: https://docs.dinmo.io/customer-hub/profiles-api
+api: DinMo Personalization API
+base_url: https://data-export-api.dinmo.io/v1
+limit_count: 1
+limits:
+- name: Personalization API throughput
+  scope: per-api (Personalization API)
+  window: 1s
+  limit: 500
+  unit: requests per second
+  burst: 1000
+  note: >-
+    DinMo documents that the Personalization API "supports 500 requests per second
+    on a sustained basis and bursts up to 1,000 requests per second." Counted as ONE
+    published limit with a burst allowance rather than two, to avoid inflating the
+    count. The docs do not say whether the ceiling is applied per workspace, per
+    exposure, or per API key, and no per-plan quota is published on the pricing page
+    (plans are metered on Active Contacts and destinations, not requests).
+  source: https://docs.dinmo.io/customer-hub/profiles-api.md
+exhaustion:
+  status: 429
+  title: Too Many Requests
+  documented_action: Retry with backoff and reduce request volume.
+  source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md
+headers:
+  documented: false
+  ratelimit_headers: []
+  retry_after: false
+  note: >-
+    No rate-limit response headers are documented — neither the RFC 9331-style
+    RateLimit-* family, the X-RateLimit-* convention, nor Retry-After. A client
+    therefore cannot read remaining quota or a reset time at runtime and must infer
+    exhaustion from the 429 status alone. Headers were not observed live because
+    every endpoint requires a workspace-specific exposure URL and a Bearer key.
+performance:
+  latency_p99_ms: 30
+  latency_note: In-region p99 latency below 30 ms, per the Personalization API overview.
+  freshness: >-
+    Data is refreshed when the underlying model is refreshed; with a five-minute
+    model refresh cadence the maximum expected staleness is under five minutes.
+  source: https://docs.dinmo.io/customer-hub/profiles-api.md

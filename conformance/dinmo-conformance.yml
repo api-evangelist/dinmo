@@ -1,0 +1,141 @@
+generated: '2026-08-13'
+method: searched
+source: https://docs.dinmo.io/security-and-privacy/overview.md
+sources:
+- https://docs.dinmo.io/security-and-privacy/overview.md
+- https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md
+- https://docs.dinmo.io/customer-hub/gdpr-customer-rights.md
+- https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso.md
+- https://www.dinmo.com/pricing
+api: DinMo Personalization API
+standards:
+- id: tls
+  conforms: true
+  evidence: >-
+    All hosts answer over HTTPS with TLS 1.3 and www.dinmo.com / docs.dinmo.io send
+    HSTS with max-age 31536000 (security/dinmo-domain-security.yml). The docs state
+    "All traffic is encrypted with TLS."
+- id: bearer-token-auth
+  conforms: true
+  evidence: >-
+    RFC 6750-style bearer credential in the Authorization header
+    (Authorization: Bearer <API_KEY>), documented in the Personalization API
+    reference. The credential is a static API key rather than an OAuth-issued token.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth 2.0 authorization server, flow, or scope model is documented for the
+    public API, and /.well-known/oauth-authorization-server 404s on every DinMo host.
+- id: oidc
+  conforms: false
+  evidence: >-
+    DinMo supports enterprise SSO into the web application via Google Workspace,
+    Okta and Microsoft Entra ID, but publishes no OIDC discovery document
+    (/.well-known/openid-configuration 404s on every host) and no OIDC-protected
+    API surface.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors are signalled with bare HTTP status codes (401/404/429/5xx). No
+    application/problem+json media type or problem document is documented
+    (errors/dinmo-problem-types.yml).
+- id: pagination
+  conforms: false
+  evidence: >-
+    The single documented operation retrieves one record by lookup key; no list
+    endpoint or pagination convention is published.
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No Idempotency-Key header is documented. The only published operation is a GET,
+    which is idempotent by HTTP semantics, but DinMo publishes no idempotency
+    mechanism for writes.
+- id: rate-limit-headers
+  conforms: false
+  evidence: >-
+    Limits are published in prose (500 rps sustained / 1,000 rps burst) and
+    exhaustion returns 429, but no RateLimit-*, X-RateLimit-* or Retry-After header
+    is documented (rate-limits/dinmo-rate-limits.yml).
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document is served. Probed /openapi.json, /openapi.yaml,
+    /swagger.json, /v1/openapi.json, /api-docs, /docs and /redoc against
+    data-export-api.dinmo.io, api.dinmo.io, docs.dinmo.io, app.dinmo.io and
+    www.dinmo.com on 2026-08-13 — all 404 or an HTML shell. The reference is
+    hand-written GitBook prose.
+compliance:
+- id: soc2-type2
+  program: SOC 2 Type 2
+  claimed: true
+  status: certified
+  evidence: >-
+    "DinMo is proud to hold the SOC 2 Type 2 certification... A copy of the
+    certification can be provided upon request to our team."
+    (docs.dinmo.io/security-and-privacy/overview). An AICPA SOC Type II badge is
+    also shown in the www.dinmo.com footer. The report itself is not published —
+    it is provided on request, so there is no public trust center or portal.
+  source: https://docs.dinmo.io/security-and-privacy/overview.md
+- id: gdpr
+  program: GDPR
+  claimed: true
+  status: compliant
+  evidence: >-
+    DinMo states full compliance with the GDPR, publishes a Register of Categories
+    of Processing Activities under Article 30.2 GDPR, and documents GDPR customer
+    rights handling in the Customer Hub.
+  source: https://docs.dinmo.io/security-and-privacy/privacy/data-processing.md
+- id: ccpa
+  program: CCPA
+  claimed: true
+  status: compliant
+  evidence: >-
+    DinMo states full compliance with the California Consumer Privacy Act on the
+    security and privacy overview.
+  source: https://docs.dinmo.io/security-and-privacy/overview.md
+- id: hipaa
+  program: HIPAA
+  claimed: true
+  status: claimed
+  evidence: >-
+    A HIPAA badge appears in the www.dinmo.com site footer alongside the AICPA SOC
+    Type II and GDPR badges. No HIPAA attestation, BAA reference, or supporting
+    page was found in the documentation, so this is recorded as a marketing claim
+    rather than a documented program.
+  source: https://www.dinmo.com/pricing
+- id: iso-27001
+  program: ISO/IEC 27001
+  claimed: false
+  status: not-published
+  evidence: No ISO 27001 certification is claimed on the site or in the documentation.
+- id: fadp
+  program: Swiss FADP
+  claimed: true
+  status: claimed
+  evidence: >-
+    DinMo's zero-data-copy architecture is marketed as built for GDPR and FADP
+    compliance; no separate FADP attestation page is published.
+  source: https://www.dinmo.com/cdp/composable-cdp/security/
+security_controls:
+- control: no-data-storage
+  detail: >-
+    DinMo executes validation and transformation inside the customer's own data
+    warehouse and does not store or duplicate customer data on its side.
+- control: data-hashing
+  detail: Sensitive data sent to destinations is hashed using AES-256.
+- control: ip-allowlisting
+  detail: >-
+    Fixed egress IP for the default GCP deployment (34.38.245.85, europe-west1)
+    that customers can allowlist; other deployments confirm their egress IP with
+    the DinMo team.
+- control: ssh-and-ssm-tunneling
+  detail: >-
+    SSH bastion tunneling and AWS Systems Manager Session Manager port forwarding
+    are supported for reaching private data sources (Amazon Redshift).
+- control: sso
+  detail: Enterprise SSO via Google Workspace, Okta and Microsoft Entra ID.
+- control: rbac-and-audit-logs
+  detail: User roles and permissions plus workspace audit logs are documented.
+notes: >-
+  Assertions above are what DinMo publishes, checked against what we could probe.
+  Nothing here is inferred from an OpenAPI document because DinMo publishes none.

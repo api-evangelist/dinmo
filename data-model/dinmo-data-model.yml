@@ -1,0 +1,145 @@
+generated: '2026-08-13'
+method: searched
+source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md
+sources:
+- https://docs.dinmo.io/customer-hub/profiles-api.md
+- https://docs.dinmo.io/customer-hub/profiles-api/set-up.md
+- https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md
+- https://docs.dinmo.io/core-concepts.md
+- https://docs.dinmo.io/activations/overview.md
+- https://docs.dinmo.io/llms.txt
+derivation_note: >-
+  DinMo publishes no OpenAPI, so this graph is NOT derived from a spec. Entities and
+  relationships are read from the documented platform concepts and from the one
+  published API path — GET /models/{workspace_id}/{model_id}/records/{record_id} —
+  which names the workspace -> model -> record containment directly. Field-level
+  schemas are deliberately absent: the response schema of a Personalization API
+  exposure is defined per-activation by the customer's own field mapping, so there
+  is no single published record schema to capture.
+entities:
+- name: workspace
+  description: >-
+    The top-level tenant container. Holds sources, models, segments, activations,
+    destinations, users/roles, tags and API keys. Its identifier appears in the
+    Personalization API path as workspace_id.
+  identifier: workspace_id
+  in_api_path: true
+- name: source
+  description: >-
+    A connected cloud data warehouse or database DinMo reads from (Snowflake,
+    BigQuery, Databricks, Redshift, PostgreSQL, Microsoft Fabric, ClickHouse) plus
+    DinMo Storage as a managed option.
+- name: model
+  description: >-
+    A business entity modelled over warehouse tables (for example Customers,
+    Transactions, Products), enriched with computed and related fields and
+    organised with tags. One row per record.
+  identifier: model_id
+  in_api_path: true
+- name: record
+  description: >-
+    A single row of a model, addressed through the Personalization API by the value
+    of the activation's configured lookup key. Its returned shape is the lookup key
+    plus the attributes mapped in the activation.
+  identifier: record_id (the lookup-key value, e.g. customer_id)
+  in_api_path: true
+- name: segment
+  description: >-
+    An audience built over a model in the no-code Visual Builder, optionally from a
+    segment template, with breakdowns and overlap analysis.
+- name: master_exclusion_list
+  description: >-
+    A global suppression segment applied across other segments to prevent
+    activation of opted-out or excluded people.
+- name: destination
+  description: >-
+    A configured target platform for activation — an ad network, CRM, messaging
+    tool, storage bucket, the generic Webhook connector, or the native
+    Personalization API destination.
+- name: activation
+  description: >-
+    The binding of a model or segment to a destination, including field mapping and
+    a sync schedule. Running an activation produces syncs and, for the
+    Personalization API destination, an exposure.
+- name: exposure
+  description: >-
+    The artifact created by a Personalization API activation. It carries the
+    callable endpoint, the lookup key, the response schema for that activation, and
+    a link to manage API keys.
+- name: api_key
+  description: >-
+    A workspace-scoped Personalization API credential managed under Settings > API
+    keys, sent as a Bearer token. Grants read access to the workspace's
+    Personalization API records.
+- name: sync
+  description: >-
+    One scheduled execution of an activation, with run history, sync warnings, and
+    automatic pause/resume behaviour on repeated failure.
+- name: journey
+  description: >-
+    An orchestration over segments composed of entry rules, wait, segment, pause
+    until, activate and stop steps, with its own run history.
+- name: identity_graph
+  description: >-
+    The identity-resolution output that stitches identifiers and events into
+    resolved profiles, including event stitching projects and their output tables.
+relationships:
+- from: workspace
+  to: source
+  type: has_many
+- from: workspace
+  to: model
+  type: has_many
+  via: workspace_id
+- from: workspace
+  to: api_key
+  type: has_many
+- from: source
+  to: model
+  type: has_many
+  via: warehouse tables the model is built on
+- from: model
+  to: record
+  type: has_many
+  via: record_id (lookup key)
+- from: model
+  to: segment
+  type: has_many
+- from: segment
+  to: activation
+  type: has_many
+- from: model
+  to: activation
+  type: has_many
+- from: destination
+  to: activation
+  type: has_many
+- from: activation
+  to: exposure
+  type: has_one
+  via: Personalization API destination only
+- from: activation
+  to: sync
+  type: has_many
+- from: exposure
+  to: record
+  type: exposes
+  via: GET /models/{workspace_id}/{model_id}/records/{record_id}
+- from: api_key
+  to: exposure
+  type: authorizes
+- from: segment
+  to: journey
+  type: has_many
+  via: entry and exit rules
+- from: identity_graph
+  to: model
+  type: feeds
+api_addressing:
+  operation: GET /models/{workspace_id}/{model_id}/records/{record_id}
+  base_url: https://data-export-api.dinmo.io/v1
+  response_shape: >-
+    A flat JSON object containing the lookup key and the mapped activation
+    attributes, e.g. {"customer_id":"12345","rec_prod_1":"SKU-001"}. The attribute
+    set varies per exposure.
+  id_prefixes: none published

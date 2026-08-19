@@ -13,9 +13,32 @@ deprecation:
 sla:
   url: null
   uptime_target: null
+  published_performance_targets:
+    latency_p99_ms: 30
+    throughput: 500 requests/second sustained, 1,000 requests/second burst
+    freshness: under five minutes on a five-minute model refresh cadence
+    source: https://docs.dinmo.io/customer-hub/profiles-api.md
+    note: >-
+      These are documented design targets for the Personalization API, not a
+      contractual SLA — no availability commitment, credit regime, or SLA page is
+      published.
 status_page: null
+status_page_probes:
+- {url: 'https://status.dinmo.com', status: 000, note: DNS does not resolve}
+- {url: 'https://status.dinmo.io', status: 000, note: DNS does not resolve}
+- {url: 'https://api.dinmo.io/health', status: 200, note: 'live JSON health endpoint on the application backend — {"status":"ok","info":{"database":{"status":"up"}}} — undocumented, and not a customer-facing status page'}
 changelog: https://news.dinmo.com/
+changelog_artifact: changelog/dinmo-changelog.yml
+stability_guidance: >-
+  DinMo's own production checklist asks consumers to keep a stable response
+  contract and to rename or remove mapped fields only after updating consumers —
+  contract stability for the Personalization API is delegated to the customer's
+  activation configuration rather than governed by DinMo versioning.
 deprecated_operations: []
+checked: '2026-08-13'
 notes: >-
-  DinMo publishes a product changelog at news.dinmo.com but no dedicated API
-  status page, SLA page, or deprecation policy was located during enrichment.
+  DinMo publishes a product changelog at news.dinmo.com but no dedicated API status
+  page, SLA page, or deprecation policy. Re-probed 2026-08-13: status.dinmo.com and
+  status.dinmo.io do not resolve, and no Sunset/Deprecation (RFC 8594) header
+  support is documented. No StatusPage or Deprecation pointer is wired in apis.yml
+  because neither exists.

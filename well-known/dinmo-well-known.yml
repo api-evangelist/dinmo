@@ -1,11 +1,17 @@
-generated: '2026-07-18'
-method: searched
+generated: '2026-08-13'
+method: probed
 source: live probes of /.well-known/* across DinMo hosts
+checked: '2026-08-13'
 notes: >-
-  No /.well-known discovery documents were served on any DinMo host (all 404). A
-  docs-host llms.txt WAS found and is captured separately at llms/dinmo-llms.txt.
-  This index records the probe results for auditability; no WellKnown/SecurityTxt
-  pointer is wired because nothing was served.
+  No /.well-known discovery document is served on any DinMo host — every path on
+  every host returns 404, and the marketing, docs and app hosts answer with an HTML
+  shell rather than a document. Re-probed 2026-08-13, adding the api.dinmo.io
+  application host (which answers JSON and serves a live /health) and the
+  oauth-protected-resource and agent-card paths. A docs-host llms.txt IS served and
+  is captured separately at llms/dinmo-llms.txt. This index records the probe
+  results for auditability; NO WellKnown or SecurityTxt pointer is wired in
+  apis.yml because nothing was served.
+hits: 0
 hosts:
 - host: https://www.dinmo.com
   documents:
@@ -14,6 +20,10 @@ hosts:
   - {path: /.well-known/oauth-authorization-server, status: 404}
   - {path: /.well-known/api-catalog, status: 404}
   - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /security.txt, status: 404}
+  note: Next.js site; 404 responses return an HTML error page, not a document.
 - host: https://docs.dinmo.io
   documents:
   - {path: /.well-known/security.txt, status: 404}
@@ -21,12 +31,34 @@ hosts:
   - {path: /.well-known/oauth-authorization-server, status: 404}
   - {path: /.well-known/api-catalog, status: 404}
   - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 200, file: llms/dinmo-llms.txt, note: not a /.well-known path; recorded here as the one machine-readable discovery document DinMo serves}
+  note: GitBook-hosted documentation.
 - host: https://app.dinmo.io
   documents:
   - {path: /.well-known/security.txt, status: 404}
   - {path: /.well-known/openid-configuration, status: 404}
   - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
 - host: https://data-export-api.dinmo.io
   documents:
   - {path: /.well-known/security.txt, status: 404}
   - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  note: Personalization API host; 404s are plain text.
+- host: https://api.dinmo.io
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /health, status: 200, note: 'live JSON health endpoint: {"status":"ok","info":{"database":{"status":"up"}}} — the application backend, not a documented public API'}
+  note: >-
+    Undocumented application backend discovered during this round. It answers JSON
+    (404 bodies are {"statusCode":404,...}) and serves /health, but every spec path
+    (/openapi.json, /swagger.json, /api-json, /docs-json, /graphql, /mcp) 404s and
+    DinMo publishes no reference for it, so it is not registered as an API entry.

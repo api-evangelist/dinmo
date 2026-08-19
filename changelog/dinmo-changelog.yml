@@ -1,14 +1,24 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: searched
 source: https://news.dinmo.com/
 url: https://news.dinmo.com/
 scheme: product-changelog
+api_versioned_changelog: false
+checked: '2026-08-13'
 notes: >-
   DinMo publishes a product changelog / "what's new" feed at news.dinmo.com. Entries
-  are titled and categorized but are not surfaced with machine-readable dates on the
-  index; the recent window below is captured in reverse-chronological order without
-  per-entry dates. This is a product changelog, not a versioned API changelog.
+  are titled and categorized (New, Improvement, New integration) and authored, but
+  the index carries no machine-readable per-entry dates and there is no RSS/Atom
+  feed, so the recent window below is captured in reverse-chronological order
+  without dates. This is a product changelog, not a versioned API changelog: no
+  entry in the current window touches the Personalization API, and no breaking
+  changes are announced against a version.
 entries:
+- title: More flexible conditions for building label fields
+  category: improvement
+  highlight: >-
+    The Label Builder now supports every operator available in the Segment Builder,
+    for turning complex logic into business-friendly values.
 - title: Stay ahead of unexpected audience changes
   category: improvement
   highlight: High-turnover warning alerts when a segment's audience share changes unusually.
@@ -30,6 +40,9 @@ entries:
 - title: Enrich models faster with Related Fields
   category: new-feature
   highlight: New computed field type to bring data between models without aggregation.
+- title: Microsoft Fabric is now available in DinMo
+  category: new-integration
+  highlight: Microsoft Fabric can be connected as a data source for models and activations.
 - title: Protect every audience with Master Exclusions
   category: new-feature
   highlight: Master Exclusion Lists apply global suppression rules across segments.

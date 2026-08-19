@@ -2,11 +2,9 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
-notes: >-
-  DinMo publishes no official hosted or remote MCP server as of enrichment. This is
-  a DERIVED candidate tool list mapped from the documented Personalization API
-  operation, provided as a starting point for an agent-native surface — not a
-  server DinMo operates.
+notes: DinMo publishes no official hosted or remote MCP server as of enrichment. This is a DERIVED candidate
+  tool list mapped from the documented Personalization API operation, provided as a starting point for
+  an agent-native surface — not a server DinMo operates.
 server:
   name: dinmo
   transport: http
@@ -17,9 +15,34 @@ auth:
   ref: authentication/dinmo-authentication.yml
 tools:
 - name: get_personalization_record
-  description: >-
-    Retrieve an activated model record (customer profile + mapped activation
-    attributes) by its lookup-key value for a given workspace and model.
+  description: Retrieve an activated model record (customer profile + mapped activation attributes) by
+    its lookup-key value for a given workspace and model.
   method: GET
   path: /models/{workspace_id}/{model_id}/records/{record_id}
   source_operation: getPersonalizationRecord
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: api-key
+  verified: probed
+  tools: 1
+  checked: '2026-08-13'
+  source: >-
+    Probed 2026-08-13 for a hosted server: POST tools/list to https://api.dinmo.io/mcp
+    (404), https://docs.dinmo.io/mcp (405); mcp.dinmo.io and mcp.dinmo.com do not
+    resolve (NXDOMAIN). No MCP server is named in docs.dinmo.io/llms.txt, in any npm
+    package, or in any DinMo-owned GitHub organization. DinMo ships no MCP server —
+    remote or stdio.
+  evidence:
+  - {url: 'https://api.dinmo.io/mcp', method: POST, status: 404}
+  - {url: 'https://docs.dinmo.io/mcp', method: POST, status: 405}
+  - {url: 'https://mcp.dinmo.io/mcp', method: POST, status: 000, note: DNS does not resolve}
+  - {url: 'https://mcp.dinmo.com/mcp', method: POST, status: 000, note: DNS does not resolve}
+agent_alternative: >-
+  The docs host does expose a GitBook agent-query affordance —
+  GET <page>.md?ask=<question>&goal=<goal> returns an answer plus sourced excerpts,
+  and every documentation page is available as Markdown by appending .md. That is a
+  documentation-reading surface for agents, not a callable product API, so it is
+  recorded here rather than as an MCP tool.

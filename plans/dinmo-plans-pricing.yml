@@ -1,0 +1,86 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.dinmo.com/pricing
+docs: https://www.dinmo.com/pricing
+currency: EUR
+billing:
+  period: monthly
+  commitment: >-
+    Offers are currently defined with an annual commitment billed monthly. DinMo
+    states a shorter commitment term can be discussed with sales.
+  trial: 30-day free trial advertised on the pricing page.
+metering:
+  unit: Active Contact
+  definition: >-
+    A "Synced Contact" is a primary key synced to at least one platform during the
+    month. An "Active Contact" is the combination of a Synced Contact and a
+    destination — the same contact sent to two destinations counts twice; the same
+    contact synced repeatedly to one destination in a month counts once.
+  secondary_unit: Destination
+  destination_definition: >-
+    A destination is a specific configuration within a platform (Facebook Custom
+    Audiences and Facebook Conversions API are two destinations, not one).
+plan_count: 4
+plans:
+- name: Starter
+  price: 350
+  price_display: From 350€ / month
+  currency: EUR
+  period: month
+  self_serve: true
+  limits:
+    contacts: up to 200k contacts
+    destinations: up to 2 destinations
+    included_active_contacts: 200,000
+  overage: +750€ per incremental 1M Active Contacts
+  cta: Sign up
+- name: Business
+  price: 1000
+  price_display: From 1000€ / month
+  currency: EUR
+  period: month
+  self_serve: true
+  limits:
+    contacts: up to 1M contacts
+    destinations: up to 4 destinations
+    included_active_contacts: 1,000,000
+  overage: +750€ per incremental 1M Active Contacts
+  cta: Get Started
+- name: Enterprise
+  price: null
+  price_display: Only pay what you need! (contact sales)
+  currency: EUR
+  period: month
+  self_serve: false
+  limits:
+    contacts: 100M contacts
+    destinations: unlimited
+    activations: unlimited
+    included_active_contacts: 5,000,000
+  features:
+  - Real-time syncs
+  - 1 day of solution engineer per month to help implement growth strategies
+  cta: Contact Sales
+- name: Startup plan
+  price: 250
+  price_display: 250€ / month
+  currency: EUR
+  period: month
+  self_serve: false
+  eligibility: >-
+    Companies with 5 to 20 employees, or seed stage or earlier funding. Qualification
+    is confirmed by contacting DinMo.
+  cta: Contact us
+notes: >-
+  Pricing is published in euros and is priced on the number of destinations plus
+  Active Contacts, not on API calls — the Personalization API is a native
+  destination inside a plan rather than a separately metered API product. No
+  per-request API pricing, free API tier, or public rate-card for the
+  Personalization API is published.
+api_pricing:
+  metered_by_request: false
+  free_tier: false
+  note: >-
+    The Personalization API must be enabled for a workspace by DinMo before it can
+    be used (docs.dinmo.io/customer-hub/profiles-api), so API access is gated on a
+    commercial conversation even inside a paid plan.

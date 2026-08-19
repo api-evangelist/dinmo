@@ -1,0 +1,78 @@
+generated: '2026-08-13'
+method: searched
+source: https://docs.dinmo.io/integrations/destination-platforms/webhook.md
+docs: https://docs.dinmo.io/integrations/destination-platforms/webhook
+asyncapi_published: false
+asyncapi_note: >-
+  DinMo publishes no AsyncAPI document. Probed docs.dinmo.io, www.dinmo.com,
+  api.dinmo.io and data-export-api.dinmo.io for /asyncapi.yaml and an event
+  catalog on 2026-08-13 — none served. This file captures the webhook surface
+  DinMo does document, in prose, on its GitBook docs.
+direction: outbound
+surface_shape: configurable-delivery
+summary: >-
+  DinMo's event surface is a native Webhook DESTINATION connector: DinMo is the
+  sender and the customer supplies the receiving endpoint. There is no fixed
+  catalog of DinMo-defined event types and no subscription API — the "events" are
+  the rows of an activated segment, and the payload shape is whatever the customer
+  maps in the activation. An integrator receives HTTP requests from DinMo; they do
+  not register a subscription against a published event schema.
+delivery:
+  transport: http
+  granularity: one HTTP request per record in the activated segment
+  methods:
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  default_recommendation: >-
+    POST is recommended for webhook and event use cases; PUT/PATCH/DELETE are
+    documented for advanced API integrations.
+  target: >-
+    A customer-defined base endpoint URL, optionally carrying static query
+    parameters (e.g. https://example.com/webhook?foo=bar).
+  payload:
+    style: url-query-parameters
+    detail: >-
+      Values are carried as query parameters on the constructed URL. Static
+      parameters are shared across all records; dynamic parameters are mapped from
+      segment columns (DinMo field -> custom attribute name), producing a unique
+      request per record — e.g.
+      https://example.com/webhook?foo=bar&email=john@example.com&user_id=123
+    body_schema_published: false
+  scheduling: >-
+    Delivery follows the activation's sync schedule
+    (docs.dinmo.io/activations/sync-scheduling); it is not an
+    emitted-on-change event stream.
+security:
+  signing: not-documented
+  signature_header: null
+  authentication: >-
+    No webhook signing secret, HMAC signature header, or mTLS option is documented.
+    Authentication to the receiving system, where required, is expressed through
+    the URL and its static query parameters.
+  note: >-
+    Because credentials would have to travel as query parameters, receivers should
+    treat the endpoint as unauthenticated-by-default and validate on their side.
+observability:
+  monitoring: >-
+    Delivery outcomes are visible in DinMo's Running History; HTTP 2xx from the
+    receiver indicates success, 4xx/5xx indicate a configuration or endpoint error.
+  retries: not-documented
+  dead_letter: not-documented
+event_catalog:
+  published: false
+  count: 0
+  note: >-
+    No named DinMo event types are published. Several destination connectors
+    (Klaviyo profile events, Iterable events, Braze track events, Batch CEP events,
+    Meta/Google/Snapchat conversion events) send provider-specific event payloads
+    defined by the RECEIVING platform's API, not by a DinMo event schema.
+inbound_events:
+  supported: false
+  note: >-
+    DinMo does not document an inbound event-ingestion API. The "Web & App
+    Tracking" product (DinMo SmartTag, a single server-side tag) is described on
+    www.dinmo.com/product/dinmo-web-app-tracking/ in marketing terms only — no
+    collection endpoint, payload schema, or SDK snippet is published in the docs,
+    so no ingestion contract could be captured.

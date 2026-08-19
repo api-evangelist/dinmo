@@ -1,4 +1,4 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: searched
 source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
 docs: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
@@ -21,8 +21,41 @@ schemes:
   location: header
   parameter: Authorization
   format: Bearer <API_KEY>
+  key_management:
+    console_path: Settings > API keys (app.dinmo.io)
+    create: Settings > API keys > Add API key
+    scope: Read access to the workspace's Personalization API records.
+    rotation: >-
+      DinMo instructs customers to rotate keys regularly and delete keys that are
+      no longer needed; keys can also be reached from the exposure that created
+      the endpoint.
+    storage_guidance: >-
+      Store the key in a server-side secret manager. DinMo explicitly warns against
+      exposing keys in browser or mobile application code and directs calls to a
+      trusted backend or edge function.
+    expiry: not documented
+    source: https://docs.dinmo.io/customer-hub/profiles-api/set-up.md
   sources:
   - https://docs.dinmo.io/customer-hub/profiles-api/api-reference
+  - https://docs.dinmo.io/customer-hub/profiles-api/set-up.md
+  - https://docs.dinmo.io/customer-hub/profiles-api.md
+platform_authentication:
+  surface: DinMo web application (app.dinmo.io)
+  methods:
+  - email/password sign-in
+  - Enterprise SSO (SAML/OIDC) via Google Workspace, Okta, or Microsoft Entra ID
+  rbac: Users, roles and permissions are managed per workspace; audit logs are available.
+  api_relevance: >-
+    SSO governs human access to the application, not programmatic API access. There
+    is no OAuth authorization-code flow, no token endpoint, and no scope model for
+    the public API.
+  sources:
+  - https://docs.dinmo.io/workspace-management/enterprise-single-sign-on-sso.md
+  - https://docs.dinmo.io/workspace-management/managing-users-roles-and-permissions.md
+enablement_gate: >-
+  The Personalization API is a native destination that must be enabled for a
+  workspace by DinMo before any key can be used — programmatic access begins with a
+  request to a DinMo representative, not with self-serve key creation.
 notes: >-
   Platform access (data sources, destinations, segments) is configured through the
   DinMo web app; the documented programmatic surface is the Personalization API,

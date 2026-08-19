@@ -1,4 +1,4 @@
-generated: '2026-07-18'
+generated: '2026-08-13'
 method: searched
 source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference
 api: DinMo Personalization API
@@ -35,7 +35,25 @@ conventions:
   rate_limiting:
     signaled: true
     mechanism: HTTP 429 (Too Many Requests) on limit exceeded; retry with backoff
-    documented_limits: false
+    documented_limits: true
+    limits: 500 requests/second sustained, bursts to 1,000 requests/second
+    headers: none documented (no RateLimit-*, X-RateLimit-*, or Retry-After)
+    ref: rate-limits/dinmo-rate-limits.yml
+    source: https://docs.dinmo.io/customer-hub/profiles-api.md
+  performance:
+    latency_p99_ms: 30
+    freshness: >-
+      Records are refreshed with the underlying model; on a five-minute refresh
+      cadence maximum staleness is under five minutes. A record removed from the
+      model returns 404 on subsequent requests.
+    source: https://docs.dinmo.io/customer-hub/profiles-api.md
+  caching:
+    guidance: >-
+      DinMo advises calling the API from trusted server-side infrastructure or an
+      edge function, caching only when the use case permits, and implementing a
+      fallback for a missing record or an unavailable service. No Cache-Control,
+      ETag, or conditional-request convention is documented.
+    source: https://docs.dinmo.io/customer-hub/profiles-api/api-reference.md
   response_shape:
     notes: >-
       A successful response contains the lookup key and the model's mapped
