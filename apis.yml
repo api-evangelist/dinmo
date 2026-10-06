@@ -51,7 +51,7 @@ accessModel:
   method: searched
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-08-13'
+modified: '2026-10-06'
 image: https://www.dinmo.com/favicon.ico
 x-docs-platform: gitbook
 x-docs-platform-confidence: high
@@ -106,6 +106,8 @@ apis:
   - type: GettingStarted
     url: https://docs.dinmo.io/customer-hub/profiles-api/set-up
 common:
+- url: https://news.dinmo.com/rss
+  type: BlogRSS
 - type: Website
   url: https://www.dinmo.com
 - type: DeveloperPortal
